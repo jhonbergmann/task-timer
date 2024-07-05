@@ -10,12 +10,12 @@
 <br>
 
 <p align="center">
-  <img src="docs/assets/screenshot-one.png" width="500" alt="" />
+  <img src="docs/assets/screenshot-one.png" width="100%" alt="" />
 </p>
 
 <p align="center">
-  <img src="docs/assets/screenshot-two.png" width="250" alt="" />
-  <img src="docs/assets/screenshot-three.png" width="250" alt="" />
+  <img src="docs/assets/screenshot-two.png" width="45%" alt="" />
+  <img src="docs/assets/screenshot-three.png" width="45%" alt="" />
 </p>
 
 ## 🔺 Demo
