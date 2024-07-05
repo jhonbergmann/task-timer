@@ -9,9 +9,14 @@
 
 <br>
 
-<!-- <p align="center">
-  <img src="docs/assets/illustration.png" alt="illustration" >
-</p> -->
+<p align="center">
+  <img src="docs/assets/screenshot-one.png" alt="" />
+</p>
+
+<p align="center">
+  <img src="docs/assets/screenshot-two.png" alt="" />
+  <img src="docs/assets/screenshot-three.png" alt="" />
+</p>
 
 ## 🔺 Demo
 ### [Live Demo, click here](https://task-timer-lemon.vercel.app/)
