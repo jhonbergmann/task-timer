@@ -19,10 +19,8 @@ export function NewCycleForm() {
         {...register('task')}
       />
       <datalist id="task-suggestions">
-        <option value="Projeto 1" />
-        <option value="Projeto 2" />
-        <option value="Projeto 3" />
-        <option value="Banana" />
+        <option value="Projeto One" />
+        <option value="Projeto Two" />
       </datalist>
       <label htmlFor="minutesAmount">durante</label>
       <MinutesAmountInput
