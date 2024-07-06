@@ -32,6 +32,7 @@ export function CyclesContextProvider({children}: ICyclesContextProviderProps) {
 
   const {cycles, activeCycleId} = cyclesState
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
+  const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
 
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(() => {
     if (activeCycle) {
@@ -46,6 +47,29 @@ export function CyclesContextProvider({children}: ICyclesContextProviderProps) {
 
     localStorage.setItem('@task-timer:cycles-state-1.0.0', stateJSON)
   }, [cyclesState])
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout | null = null
+
+    if (activeCycle) {
+      interval = setInterval(() => {
+        const secondsDifference = differenceInSeconds(new Date(), new Date(activeCycle.startDate))
+
+        if (secondsDifference >= totalSeconds) {
+          markCurrentCycleAsFinished()
+
+          setSecondsPassed(totalSeconds)
+          clearInterval(interval!)
+        } else {
+          setSecondsPassed(secondsDifference)
+        }
+      }, 1000)
+    }
+
+    return () => {
+      clearInterval(interval!)
+    }
+  }, [activeCycle, totalSeconds, activeCycleId, setSecondsPassed, markCurrentCycleAsFinished])
 
   function setSecondsPassed(seconds: number) {
     setAmountSecondsPassed(seconds)
@@ -85,6 +109,7 @@ export function CyclesContextProvider({children}: ICyclesContextProviderProps) {
         setSecondsPassed,
         createNewCycle,
         interruptCurrentCycle,
+        totalSeconds,
       }}
     >
       {children}

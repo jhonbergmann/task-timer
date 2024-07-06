@@ -16,6 +16,7 @@ export interface ICyclesContextType {
   setSecondsPassed: (seconds: number) => void
   createNewCycle: (data: ICreateCycleData) => void
   interruptCurrentCycle: () => void
+  totalSeconds: number
 }
 
 export interface ICyclesContextProviderProps {
