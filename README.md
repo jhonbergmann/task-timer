@@ -19,7 +19,7 @@
 </p>
 
 ## 🔺 Demo
-### [Live Demo, click here](https://task-timer-lemon.vercel.app/)
+### [Live Demo, click here](https://task-timer-jhonatan-bergmann.vercel.app/)
 
 ## 📦 Tech Stack
 
